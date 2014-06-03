@@ -1,0 +1,29 @@
+<html>
+<body>
+	<div class="video" data-video="http://vjs.zencdn.net/v/oceans.mp4"></div>
+	<div class="video" data-video="http://vjs.zencdn.net/v/oceans.mp4"></div>
+	<script src="bower_components/requirejs/require.js"></script>
+	<script>
+		require.config({
+			paths: {
+				"BigVideo": "lib/bigvideo",
+				"jquery": "bower_components/jquery/dist/jquery",
+				"jquery-ui": "bower_components/jquery-ui/ui/jquery-ui",
+				"videojs": "bower_components/video.js/dist/video-js/video",
+				"imagesloaded": "bower_components/imagesloaded/imagesloaded",
+				"eventEmitter/EventEmitter": "bower_components/eventEmitter/EventEmitter",
+				"eventie/eventie": "bower_components/eventie/eventie"
+			},
+			shim: {
+				"videojs": {exports: 'videojs'}
+			}
+		});
+		require(['BigVideo'], function(bigvideo) {
+
+			$('.video').bigvideo().bigvideo('init').bigvideo('show');
+
+
+		});
+	</script>
+</body>
+</html>
